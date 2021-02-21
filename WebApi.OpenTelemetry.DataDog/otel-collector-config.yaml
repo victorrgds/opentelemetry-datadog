@@ -1,0 +1,23 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        
+processors:
+  batch:
+    timeout: 10s
+    
+exporters:
+  datadog/api:
+    env: development
+    service: WebApi.OpenTelemetry.DataDog
+    version: 1
+    api:
+      key: 2f79ac1503bf67bb403fb09639d4677a
+      
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [datadog/api]
