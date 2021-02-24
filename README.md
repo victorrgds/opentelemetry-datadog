@@ -1,3 +1,3 @@
 # opentelemetry
 
-Aplicação de exemplo utilizando instrumentação OpenTelemetry se reportando para o DataDog
+.net core application example with opentelemetry using DataDog
