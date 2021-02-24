@@ -9,19 +9,6 @@ services:
       # Configure Open Telemetry Collector Url
       OTLP__ENDPOINT: "http://otel-collector:4317"
       
-      # Configure DataDog .NET Profiler
-      #CORECLR_ENABLE_PROFILING: "1"
-      #CORECLR_PROFILER: "{846F5F1C-F9AE-4B07-969E-05C26BC060D8}"
-      #CORECLR_PROFILER_PATH: "/opt/datadog/Datadog.Trace.ClrProfiler.Native.so"
-
-      # Configure Data Dog Agent
-      #DD_INTEGRATIONS: "/opt/datadog/integrations.json"
-      #DD_DOTNET_TRACER_HOME: "/opt/datadog"
-      #DD_TRACE_AGENT_URL: "http://data-dog-agent:8126"
-      #DD_ENV: "development"
-      #DD_SERVICE: "WebApi.OpenTelemetry.DataDog"
-      #DD_VERSION: "1"
-      #DD_LOGS_INJECTION: "true"
     ports:
       - "8000:80"
     depends_on:
