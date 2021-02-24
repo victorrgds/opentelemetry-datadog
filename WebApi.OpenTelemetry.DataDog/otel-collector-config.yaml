@@ -17,6 +17,11 @@ receivers:
 processors:
   batch:
     timeout: 10s
+  resource:
+    attributes:
+    - key: datadog.host.name
+      value: telemetrylabs
+      action: upsert
     
 exporters:
   datadog/api: 
@@ -34,11 +39,11 @@ service:
   pipelines:
     traces:
       receivers: [otlp]
-      processors: [batch]
+      processors: [resource, batch]
       exporters: [datadog/api]
     metrics:
       receivers: [hostmetrics]
-      processors: [batch]
+      processors: [resource, batch]
       exporters: [datadog/api]
 #    logs:
 #      receivers: [otlp]
